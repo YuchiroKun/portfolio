@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="js.js" defer></script>
     <title>Василий Ленточкин</title>
 </head>
 <body>
@@ -21,16 +20,16 @@
                     <div class="itc-slider-wrapper">
                       <div class="itc-slider-items">
                         <div class="itc-slider-item">
-                          <img src="./images/./IMG_4006-1.webp" alt="" class="slider-img">
+                          <img src="/images/./IMG_4006-1.webp" alt="" class="slider-img">
                         </div>
                         <div class="itc-slider-item">
-                          <img src="./images/IMG_4008.webp" alt="" class="slider-img">
+                          <img src="/images/IMG_4008.webp" alt="" class="slider-img">
                         </div>
                         <div class="itc-slider-item">
-                          <img src="./images/IMG_4010-1.webp" alt=""  class="slider-img">
+                          <img src="/images/IMG_4010-1.webp" alt=""  class="slider-img">
                         </div>
                         <div class="itc-slider-item">
-                            <img src="./images/IMG_4008.webp" alt="" class="slider-img">
+                            <img src="/images/IMG_4008.webp" alt="" class="slider-img">
                           </div>
                       </div>
                     </div>
@@ -95,14 +94,14 @@
             <div class="itc-slider" data-slider="itc-slider" data-loop="false" data-autoplay="false">
                 <div class="itc-slider-wrapper">
                   <div class="itc-slider-items">
-                    <div class="itc-slider-item">
-                      <img src="./images/AXIS.webp" alt="" class="slider-img">
+                    <div class="itc-slider-item" data-toggle="modal-1">
+                      <img src="/images/AXIS.webp" alt="" class="slider-img" >
                     </div>
-                    <div class="itc-slider-item">
-                      <img src="./images/МСА.webp" alt="" class="slider-img">
+                    <div class="itc-slider-item" data-toggle="modal-2">
+                      <img src="/images/МСА.webp" alt="" class="slider-img" >
                     </div>
-                    <div class="itc-slider-item">
-                      <img src="./images/1707604cfa5baa095a5bd9ce21cd692a.webp" alt=""  class="slider-img">
+                    <div class="itc-slider-item" data-toggle="modal-3">
+                      <img src="/images/1707604cfa5baa095a5bd9ce21cd692a.webp" alt=""  class="slider-img" >
                     </div>
                   </div>
                 </div>
@@ -134,5 +133,32 @@
 
 </div>
 </section>
+<script src="js.js" defer></script>
+<script src="modal.js"></script>
+<script>
+    const modal1 = new ItcModal({
+      title: ' ',
+      content: ' <img src="/images/AXIS.webp" alt="">'
+    });
+    const modal2 = new ItcModal({
+      title: ' ',
+      content: '<img src="/images/МСА.webp" alt="" >'
+    });
+    const modal3 = new ItcModal({
+      title: ' ',
+      content: '<img src="/images/1707604cfa5baa095a5bd9ce21cd692a.webp" alt="" width="650px" heiht="auto" >'
+    });
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('[data-toggle="modal-1"]')) {
+        modal1.show();
+      }
+      if (e.target.closest('[data-toggle="modal-2"]')) {
+        modal2.show();
+      }
+      if (e.target.closest('[data-toggle="modal-3"]')) { 
+        modal3.show();
+      }
+    });
+  </script>
 </body>
 </html>
